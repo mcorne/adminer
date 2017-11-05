@@ -11,6 +11,7 @@ function adminer_object() {
     $plugins = array(
         // specify enabled plugins here
         new AdminerEditForeign,
+        new AdminerHashColumn,
         // new AdminerLoginSqlite, // uncomment to log into the database without authentication, eg to import database creation files
         new AdminerLoginSqliteTable, // uncomment to log into the database with authentication
     );

@@ -32,7 +32,10 @@ if ($_POST && !$error && !isset($_GET["select"])) {
 		$set = array();
 		foreach ($fields as $name => $field) {
 			$val = process_input($field);
-			if ($val !== false && $val !== null) {
+                        if ($val === false) {
+                            queries_redirect($location, error(), true);
+                            return;
+                        } elseif ($val !== null) {
 				$set[idf_escape($name)] = $val;
 			}
 		}
